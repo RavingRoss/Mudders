@@ -1,0 +1,24 @@
+<!-- The `multiple` attribute lets users select multiple files. -->
+<!--input type="file" id="file-selector" multiple -->
+<html>
+    <style>
+    h1{
+        text-align: center;
+        font-family: Verdana;
+        font-size: 70;
+    }
+    </style>
+    <h1>UPLOAD AN IMAGE</h1>
+    <head>
+        <input type="file" id="file-selector" accept=".jpg, .jpeg, .png" />
+        <script>
+            const fileSelector = document.getElementById('file-selector');
+            fileSelector.addEventListener('change', (event) => {
+                const fileList = event.target.files;
+                console.log(fileList);
+            });
+            
+        </script>
+        <!--script>src="fileSelector.js"</script-->
+    </head>
+</html>
