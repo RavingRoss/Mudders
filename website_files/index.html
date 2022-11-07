@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Muddy Trails</title>
+	</head>
+	
+    <style>
+        h1 
+        {
+            text-align: center;
+            font-family: Verdana;
+            font-size: 72;
+        }
+		.text-center {
+			text-align: center;
+		}
+		#map
+		{
+			margin: auto;
+			height: 75%;
+			width: 65%;
+		}
+    </style>
+    
+    <body>
+       <h1>Muddy Trails</h1>
+        <p align="center">
+		Welcome to Muddy Trails! Our goal is to provide you with up-to-date information on the conditions of various trails and paths that you may not find on traditional mapping services. Help us help you by reporting issues you may find like mud, unstable ground, debris, etc.
+		</p>
+		
+		<!-- div tag is where the map will go. script tag runs a script from google for displaying the map -->
+		<div id="map"></div>
+		<script type="text/javascript" src="scripts/index.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCfj1OKmO63YdiqGgHxRIFShWnW8QJlHg&callback=initMap&libraries=&v=weekly" async></script>
+		<script type="text/javascript" src="scripts/dropdown_create.js"></script>
+		<script type="text/javascript" src="scripts/set_map_center.js"></script>
+		<script type="text/javascript" src="scripts/get_place_time.js"></script>
+		
+		<form id="trail_search_form">
+			<input list="trail_search" id="trail_search_input">
+			<datalist id="trail_search">
+			</datalist>
+			<input type="button" onclick="setMapCenter();">
+		</form>
+		
+		<div class=text-center>
+            <form id="report_upload" action="scripts/report_upload.phps" method="post" enctype="multipart/form-data">
+				<label for="report_type">Obstruction Type: </label>
+				<select name="reportType" id="report_type">
+					<option value="1">Debris</option>
+					<option value="2">Flooding</option>
+					<option value="3">Other</option>
+				</select>
+				<input type="hidden" id="current_time" name="currentTime" value="">
+				<input type="hidden" id="current_lat" name="currentLat" value="">
+				<input type="hidden" id="current_lng" name="currentLng" value="">
+				<input type="button" onclick="getPlaceTime();">
+            <form>
+		</div>
+	</body>
+</html>
+
+
+<!--<table>
+                    <tr>
+                        <td>Type of Obstruction:</td>
+                        <td>
+                        <select name="Type of Obstruction" required>
+                        <option selected hidden value="">Options</option>
+                        <option value="Fallen tree">Fallen tree</option>
+                        <option value="Flooding">Flooding</option>
+                        <option value="Other debris">Other debris</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit" name="submit"></td>
+                    </tr>
+                <table>-->
