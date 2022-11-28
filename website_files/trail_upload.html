@@ -5,10 +5,51 @@
 	
 	<body>
 		<form action="scripts/trail_upload.php" method="post" enctype="multipart/form-data">
-			<input type="text" id="trail_name" name="trailName" value=""/>
-			<input type="text" id="center_lat" name="centerLat" value=""/>
-			<input type="text" id="center_lng" name="centerLng" value=""/>
-			<input type="file" name="trail_file" value=""/>
+			<label for="trail_name">Trail Name:</label><br>
+			<input type="text" id="trail_name" name="trailName" value=""/><br>
+			
+			<label for="center_lat">Center Latitude:</label><br>
+			<input type="text" id="center_lat" name="centerLat" value=""/><br>
+			
+			<label for="center_lng">Center Longitude:</label><br>
+			<input type="text" id="center_lng" name="centerLng" value=""/><br>
+			
+			<label for="length">Length:</label><br>
+			<input type="text" id="length" name="trailLength" value=""/><br>
+			
+			<label for="elv_gain">Elevation Gain:</label><br>
+			<input type="text" id="elv_gain" name="elvGain" value=""/><br>
+			
+			<label for="route_type">Route Type:</label><br>
+			<input type="text" id="route_type" name="routeType" value=""/><br>
+			
+			<label for="conditions">Conditions:</label><br>
+			<input type="text" id="conditions" name="trailConditions" value=""/><br>
+			
+			<label for="flood_potential">Flooding Potential:</label><br>
+			<input type="text" id="flood_potential" name="floodPotential" value=""/><br>
+						
+			<label for="activities">Activities:</label><br>
+			<input type="text" id="activities" name="trailActivities" value=""/><br>
+						
+			<label for="dogs">Dogs allowed:</label><br>
+			<input type="text" id="dogs" name="dogsAllowed" value=""/><br>
+						
+			<label for="wildlife">Wildlife:</label><br>
+			<input type="text" id="wildlife" name="trailWildlife" value=""/><br>
+						
+			<label for="hours">Hours:</label><br>
+			<input type="text" id="hours" name="trailHours" value=""/><br>
+						
+			<label for="location">Location:</label><br>
+			<input type="text" id="location" name="trailLocation" value=""/><br>
+						
+			<label for="info_link">Info Link:</label><br>
+			<input type="text" id="info_link" name="infoLink" value=""/><br>
+			
+			<label for="trail_file">Trail Coordinate File:</label><br>
+			<input type="file" name="trail_file" value=""/><br>
+			
 			<input type="submit" name="submit" value="Save" />
 		</form>
 	</body>
