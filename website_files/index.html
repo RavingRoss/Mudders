@@ -1,6 +1,13 @@
 <html>
     <head>
-        <title>Muddy Trails</title>
+        <!--First section-->
+        <div style="background-image: url('topograph.jpeg'); 
+        background-size: cover; height:480px; padding-top:80px; text-align: center;">
+        <img src="hiking.jpg" style="height:150px; border-radius: 50%; border: 10px solid #5fa2fa;">
+        <h1 span style="background-color:white; font-size:100px; color:#5fa2fa; margin:0px;">Muddy Trails</h1>
+        <p span style= "background-color:white; font-size:25px; color:#5fa2fa;"><em>Welcome to Muddy Trails! Our goal is to provide you with up-to-date information on the conditions of various trails and paths that you may not find on traditional mapping services. Help us help you by reporting issues you may find like mud, unstable ground, debris, etc.</em></p>
+        </div><br>
+        <link rel="shortcut icon" type="image/jpg" href="hiking.jpg"/>
 	</head>
 	
     <style>
@@ -22,28 +29,22 @@
     </style>
     
     <body>
-       <h1>Muddy Trails</h1>
-        <p align="center">
-		Welcome to Muddy Trails! Our goal is to provide you with up-to-date information on the conditions of various trails and paths that you may not find on traditional mapping services. Help us help you by reporting issues you may find like mud, unstable ground, debris, etc.
-		</p>
 		
 		<!-- div tag is where the map will go. script tag runs a script from google for displaying the map -->
-		<div id="map"></div>
 		<script type="text/javascript" src="scripts/index.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCfj1OKmO63YdiqGgHxRIFShWnW8QJlHg&callback=initMap&libraries=&v=weekly" async></script>
 		<script type="text/javascript" src="scripts/dropdown_create.js"></script>
 		<script type="text/javascript" src="scripts/set_map_center.js"></script>
 		<script type="text/javascript" src="scripts/get_place_time.js"></script>
 		
-		<form id="trail_search_form">
-			<input list="trail_search" id="trail_search_input">
-			<datalist id="trail_search">
-			</datalist>
-			<input type="button" onclick="setMapCenter();">
-		</form>
-		
 		<div class=text-center>
-            <form id="report_upload" action="scripts/report_upload.phps" method="post" enctype="multipart/form-data">
+            <form id="trail_search_form">
+                <input list="trail_search" id="trail_search_input">
+                <datalist id="trail_search">
+                </datalist>
+                <input type="button" onclick="setMapCenter();" value="Find this trail.">
+            </form>
+            <form id="report_upload" action="scripts/report_upload.php" method="post" enctype="multipart/form-data">
 				<label for="report_type">Obstruction Type: </label>
 				<select name="reportType" id="report_type">
 					<option value="1">Debris</option>
@@ -53,9 +54,13 @@
 				<input type="hidden" id="current_time" name="currentTime" value="">
 				<input type="hidden" id="current_lat" name="currentLat" value="">
 				<input type="hidden" id="current_lng" name="currentLng" value="">
-				<input type="button" onclick="getPlaceTime();">
+				<input type="button" onclick="getPlaceTime();" value="Submit Report">
             <form>
 		</div>
+		<div id="map"></div>
+        <br>
+        <div class=text-center> <a href="https://mudtrail.infinityfreeapp.com/trail_upload.html">Trail Upload</a></div><br>
+        <div class=text-center> <a href="https://mudtrail.infinityfreeapp.com/contact_us.html">Contact Us</a> </div>
 	</body>
 </html>
 
